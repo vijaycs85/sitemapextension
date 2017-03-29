@@ -1,0 +1,18 @@
+default:
+  suites:
+    default:
+      paths:
+        - '%paths.base%/features'
+      contexts:
+        - '\Drupal\DrupalExtension\Context\DrupalContext'
+        - '\Drupal\DrupalExtension\Context\MinkContext'
+        - '\Drupal\DrupalExtension\Context\MessageContext'
+        - '\Drupal\DrupalExtension\Context\DrushContext'
+        - '\Vijaycs85\SiteMapExtension\Context\SiteMapContext'
+  extensions:
+    Behat\MinkExtension:
+      goutte: ~
+      selenium2: ~
+    Drupal\DrupalExtension:
+      blackbox: ~
+      api_driver: 'blackbox'

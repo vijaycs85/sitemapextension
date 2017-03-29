@@ -1,0 +1,19 @@
+{
+  "name": "vijaycs85/sitemapextension",
+  "description": "Simple behat script to smoke test your Drupal site by using sitemap.xml",
+  "type": "behat-extension",
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dev": {
+    "drupal/drupal-extension": "^3.2"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  },
+  "autoload": {
+    "psr-4": {
+      "Vijaycs85\\SiteMapExtension\\": "src/SiteMapExtension"
+    }
+  }
+}
