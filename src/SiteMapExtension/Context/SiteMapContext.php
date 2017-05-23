@@ -44,12 +44,8 @@ class SiteMapContext extends RawMinkContext {
         echo "Error while visiting $url. Error message is:" . $e->getMessage();
         continue;
       }
-      if ($this->getSession()->getPage()->has('xpath', '//title')) {
-        $this->statusCode[$url] = 200;
-      }
-      else {
-        $this->statusCode[$url] = 500;
-      }
+      $this->statusCode[$url] = $this->getSession()->getStatusCode();
+
     }
   }
 
