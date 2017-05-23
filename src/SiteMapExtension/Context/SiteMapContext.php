@@ -64,4 +64,18 @@ class SiteMapContext extends RawMinkContext {
     }
   }
 
+  /**
+   * Visit an URL in sitemap.xml
+   *
+   * @Then /^I should see (?P<type>[^"]*) file$/
+   */
+  public function iShouldSeeSitemapElement($type) {
+    switch (strtolower($type)) {
+      case 'xml':
+        $content_type = 'application/xml';
+      break;
+    }
+    return $this->getSession()->getResponseHeader('Content-Type') == $content_type;
+  }
+
 }
